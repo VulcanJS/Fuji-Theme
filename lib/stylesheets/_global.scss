@@ -1,0 +1,33 @@
+body{
+  color: $dark-grey;
+}
+
+h1, h2, h3, h4, h5, h6, .btn{
+  @include secondary-font;
+  font-weight: bold;
+}
+
+.btn.btn-primary, .btn.btn-primary.active{
+  // @include primary-gradient;
+  background-color: $primary-color;
+  border-radius: 0;
+  border: none;
+  color: $dark-grey;
+  &:hover, &:active, &:focus, &:active:focus{
+    background: $dark-grey;
+    color: white;
+  }
+}
+
+a{
+  font-weight: bold;
+  &, &:link, &:active, &:visited, &:focus{
+    color: $dark-grey;
+    text-decoration: none;
+  }
+  &:hover{
+    color: $dark-grey;
+    text-decoration: none;
+
+  }
+}

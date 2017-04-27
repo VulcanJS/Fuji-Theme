@@ -1,0 +1,45 @@
+.logo-text{
+  a{
+    color: white;
+  }
+}
+.tagline{
+  color: rgba(255,255,255,0.7);
+  font-weight: normal;
+}
+
+.header-wrapper{
+  background: #151515;
+}
+
+.header{
+  color: white;
+}
+
+.nav{
+  >div{
+    margin-left: $spacing;
+  }
+}
+
+.nav-links{
+  a{
+    color: white;
+    @include secondary-font;
+    font-weight: bold;
+    margin-left: $spacing;
+  }
+}
+
+.users-menu, .users-account-menu{
+  .btn-default{
+    color: white;
+  }
+}
+
+.btn.posts-new-button{
+  &:hover{
+    background: $white;
+    color: $dark-grey;
+  }
+}

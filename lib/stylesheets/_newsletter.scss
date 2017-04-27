@@ -1,0 +1,15 @@
+.newsletter{
+  background: $primary-color;
+  border-radius: 0;
+  border: none;
+  margin: $spacing*2 auto;
+  padding: $spacing*2;
+}
+.newsletter-button{
+  background: $dark-grey;
+  color: white;
+  &:hover{
+    background: #333;
+    color: white;
+  }
+}

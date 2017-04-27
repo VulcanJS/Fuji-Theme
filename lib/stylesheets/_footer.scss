@@ -1,0 +1,28 @@
+
+.footer{
+  color: rgba(255,255,255,0.8);
+  width: auto;
+  max-width: none;
+  text-align: center;
+  padding: $spacing 0;
+  margin: 0;
+  a, h1, h2, h3, h4{
+    color: white;
+  }
+}
+
+// .footer-primary{
+//   background: #151515;
+// }
+
+// .footer-secondary{
+//   background: #1D1D1D;
+// }
+
+// .footer-container{
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: $spacing*2 $spacing/2;
+//   display: flex;
+//   justify-content: space-between;
+// }

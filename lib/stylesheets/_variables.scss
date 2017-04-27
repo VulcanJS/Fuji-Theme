@@ -1,0 +1,13 @@
+$spacing: 20px;
+
+@mixin secondary-font{
+  font-family: 'Chivo', sans-serif;
+}
+
+@mixin primary-gradient{
+  background: linear-gradient(#FBEE01, #DDC308);
+}
+
+@mixin primary-gradient-hover{
+  background: linear-gradient(#FFF657, #F5DC2B);
+}

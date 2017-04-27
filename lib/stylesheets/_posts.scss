@@ -1,0 +1,112 @@
+//////////////////////////////////////////////////////
+// Post Item                                        //
+//////////////////////////////////////////////////////
+
+.posts-thumbnail{
+  img{
+    width: 180px;
+    height: auto;
+  }
+}
+.posts-item-title{
+  margin-bottom: $spacing/2;
+}
+.posts-categories{
+  margin: 0;
+  .posts-category{
+    margin: 5px 5px 5px 0;
+  }
+}
+
+.posts-item-image{
+  position: relative;
+  .posts-thumbnail{
+  }
+  .posts-actions{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    padding: $spacing/4;
+    background: rgba(0,0,0,0.6);
+    color: white;
+  }
+}
+
+//////////////////////////////////////////////////////
+// Post List                                        //
+//////////////////////////////////////////////////////
+
+.posts-list{
+  padding: $spacing;
+  .posts-list-content{
+    border-top: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .posts-item{
+    width: calc((100% - (#{$spacing} * 2))/3);
+    margin-right: $spacing;
+    margin-bottom: $spacing;
+    padding: 0;
+    display: block;
+    border: none;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  .posts-thumbnail{
+    width: 100%;
+    margin-bottom: $spacing / 2 ;
+    img{
+      width: 100%;
+    }
+  }
+  a.posts-load-more{
+    background: $primary-color;
+    border-radius: 0;
+    border: none;
+    @include secondary-font;
+    font-weight: bold;
+    &:hover{
+      background: $dark-grey;
+      color: white;
+    }
+  }
+
+  .posts-no-more{
+    text-align: center;
+    padding: $spacing;
+  }
+}
+
+
+//////////////////////////////////////////////////////
+// Post Page                                        //
+//////////////////////////////////////////////////////
+
+.posts-page{
+  width: 100%;
+  background: white;
+  padding: $spacing*3 $spacing*4;
+  .posts-item-title{
+    font-size: 2.5rem;
+    margin-bottom: $spacing*2;
+  }
+
+  .posts-page-extra{
+    display: flex;
+    align-items: center;
+    .vote{
+      margin-right: $spacing/2;
+    }
+  }
+
+  .posts-page-meta{
+    display: flex;
+    margin-left: 5px;
+    .posts-stats{
+      margin-right: 5px;
+    }
+  }
+}
