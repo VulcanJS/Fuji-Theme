@@ -6,7 +6,7 @@ import Posts from 'meteor/vulcan:posts';
 const FujiHeader = (props, context) => {
   
   const logoUrl = getSetting("logoUrl");
-  const siteTitle = getSetting("title", "Vulcan");
+  const siteTitle = getSetting("title", "Fuji");
   const tagline = getSetting("tagline");
 
   return (
@@ -29,11 +29,9 @@ const FujiHeader = (props, context) => {
             {!!props.currentUser ? <Components.UsersMenu/> : <Components.UsersAccountMenu/>}
           </div>
 
-          <Components.ShowIf check={Posts.options.mutations.new.check}>
-            <div className="nav-new-post">
-              <Components.PostsNewButton/>
-            </div>
-          </Components.ShowIf>
+          <div className="nav-new-post">
+            <Components.PostsNewButton/>
+          </div>
 
         </div>
 

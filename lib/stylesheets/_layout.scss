@@ -1,27 +1,17 @@
 
 .wrapper{
-  background: #333;
-}
-.main{
-  margin: 0 auto;
 }
 .header-wrapper{
-  padding-bottom: 114px;
 }
-.main-inner{
-  margin-bottom: $spacing;
-  margin-top: -114px;
+.main-wrapper{
+  background: $lighter-grey;
+}
+.main{
+
 }
 .main-content{
-  display: flex;
 }
 .sidebar{
-  display: block;
-  width: 260px;
 }
 .center-content{
-  flex: 1;
-  background: white;
-  min-height: 100vh;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }

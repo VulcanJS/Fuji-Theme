@@ -2,6 +2,13 @@
 // Post Item                                        //
 //////////////////////////////////////////////////////
 
+.posts-item{
+  background: $white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.posts-item-content{
+  padding: $spacing/2;
+}
 .posts-thumbnail{
   img{
     width: 180px;
@@ -37,7 +44,6 @@
 //////////////////////////////////////////////////////
 
 .posts-list{
-  padding: $spacing;
   .posts-list-content{
     border-top: none;
     margin-bottom: 0;
@@ -45,19 +51,18 @@
     flex-wrap: wrap;
   }
   .posts-item{
-    width: calc((100% - (#{$spacing} * 2))/3);
+    width: calc((100% - (#{$spacing} * 3))/4);
     margin-right: $spacing;
     margin-bottom: $spacing;
     padding: 0;
     display: block;
     border: none;
-    &:nth-child(3n) {
+    &:nth-child(4n) {
       margin-right: 0;
     }
   }
   .posts-thumbnail{
     width: 100%;
-    margin-bottom: $spacing / 2 ;
     img{
       width: 100%;
     }

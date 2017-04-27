@@ -1,14 +1,14 @@
 .sidebar-wrapper{
-  padding: $spacing 0;
+  background: $white;
+  width: 100%;
+  max-width: 250px;
 }
 .sidebar{
-  background: $light-grey;
   // border-radius: 3px 0 0 3px;
   // box-shadow: inset -5px 0px 10px 0px rgba(0,0,0,0.1);
-  height: 100%;
   .search-form{
     padding: $spacing;
     width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid $light-grey;
   }
 }

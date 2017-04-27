@@ -1,19 +1,26 @@
+//////////////////////////////////////////////////////
+// Logo.                                            //
+//////////////////////////////////////////////////////
+
 .logo-text{
   a{
-    color: white;
   }
 }
 .tagline{
-  color: rgba(255,255,255,0.7);
   font-weight: normal;
 }
 
+//////////////////////////////////////////////////////
+// Header.                                          //
+//////////////////////////////////////////////////////
+
 .header-wrapper{
-  background: #151515;
+  background: $white;
+  border-bottom: 1px $light-grey solid;
+  margin-bottom: 0;
 }
 
 .header{
-  color: white;
 }
 
 .nav{
@@ -24,7 +31,6 @@
 
 .nav-links{
   a{
-    color: white;
     @include secondary-font;
     font-weight: bold;
     margin-left: $spacing;
@@ -33,13 +39,6 @@
 
 .users-menu, .users-account-menu{
   .btn-default{
-    color: white;
   }
 }
 
-.btn.posts-new-button{
-  &:hover{
-    background: $white;
-    color: $dark-grey;
-  }
-}

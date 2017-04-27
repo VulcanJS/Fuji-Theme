@@ -4,12 +4,10 @@ import React from 'react';
 const FujiSidebar = () => {
 
   return (
-    <div className="sidebar-wrapper">
-      <div className="sidebar posts-list-header">
-        <Components.SearchForm/>
-        <div className="posts-list-header-categories">
-          <Components.CategoriesList />
-        </div>
+    <div className="sidebar">
+      <Components.SearchForm/>
+      <div className="sidebar-categories">
+        <Components.CategoriesList />
       </div>
     </div>
   )
