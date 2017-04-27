@@ -4,10 +4,11 @@
 .header-wrapper{
 }
 .main-wrapper{
-  background: $lighter-grey;
+  background: $lightest-grey;
 }
 .main{
-
+  padding: $spacing*2 $spacing;
+  margin-bottom: 0;
 }
 .main-content{
 }

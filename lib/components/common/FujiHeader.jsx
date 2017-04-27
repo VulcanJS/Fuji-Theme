@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { replaceComponent, getSetting, Components } from 'meteor/vulcan:core';
 import Posts from 'meteor/vulcan:posts';
+import withUI from '../../containers/withUI.js';
 
 const FujiHeader = (props, context) => {
   
@@ -22,7 +23,7 @@ const FujiHeader = (props, context) => {
         <div className="nav">
           
           <div className="nav-links">
-            <Link to="/about">About</Link>
+            <Components.PostsViews/>
           </div>
 
           <div className="nav-user">
@@ -33,6 +34,12 @@ const FujiHeader = (props, context) => {
             <Components.PostsNewButton/>
           </div>
 
+          <div className="nav-hamburger">
+            <a className="sidebar-toggle" href="#" onClick={props.toggleSidebar}>
+              <Components.Icon name="menu"/>
+            </a>
+          </div>
+
         </div>
 
       </header>
@@ -41,4 +48,4 @@ const FujiHeader = (props, context) => {
 }
 
 
-replaceComponent('Header', FujiHeader);
+replaceComponent('Header', FujiHeader, withUI);

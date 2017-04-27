@@ -10,5 +10,8 @@
     padding: $spacing;
     width: 100%;
     border-bottom: 1px solid $light-grey;
+    min-height: 83px;
+    display: flex;
+    align-items: center;
   }
 }

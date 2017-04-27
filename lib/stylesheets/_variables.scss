@@ -1,7 +1,11 @@
 $spacing: 20px;
 
+@mixin primary-font{
+  font-family: 'Work Sans', sans-serif !important;
+}
+
 @mixin secondary-font{
-  font-family: 'Chivo', sans-serif;
+  font-family: 'Work Sans', sans-serif !important;
 }
 
 @mixin primary-gradient{

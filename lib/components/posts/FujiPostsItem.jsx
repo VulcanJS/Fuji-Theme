@@ -3,6 +3,7 @@ import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 import { Link } from 'react-router';
 import Posts from "meteor/vulcan:posts";
+import moment from 'moment';
 
 class FujiPostsItem extends getRawComponent('PostsItem') {
   
@@ -23,12 +24,17 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
     let postClass = "posts-item";
     if (post.sticky) postClass += " posts-sticky";
 
+    const mDuration = moment.duration(post.duration, 'seconds');
+    const duration = `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+
     return (
       <div className={postClass}>
 
         <div className="posts-item-image">
           
           {post.thumbnailUrl ? <Components.PostsThumbnail post={post}/> : null}
+
+          {post.duration ? <span className="posts-item-duration">{duration}</span> : null}
 
           {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
         

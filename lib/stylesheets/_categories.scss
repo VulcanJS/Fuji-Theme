@@ -88,13 +88,18 @@ div.category-menu-item{
   width: auto;
 }
 
-.posts-categories a{
-  font-weight: normal;
-  font-size: 0.8rem;
-  &:hover{
-    background: $primary-color;
-    color: $dark-grey;
-    border-color: $primary-color;
+.posts-categories{
+  .posts-category, .dropdown-item a{
+    font-weight: normal;
+    font-size: 0.8rem;
+    border: none;
+    background: $lighter-grey;
+    margin: 0px 5px 5px 0;
+    &:hover{
+      background: $primary-color;
+      color: $dark-grey;
+      border-color: $primary-color;
+    }
   }
 }
 

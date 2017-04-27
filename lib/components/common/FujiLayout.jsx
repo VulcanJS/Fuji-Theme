@@ -5,7 +5,13 @@ import withUI from '../../containers/withUI.js';
 
 const FujiLayout = props => 
   
-  <Sidebar sidebar={<Components.Sidebar />} open={props.ui.showSidebar} onSetOpen={props.toggleSidebar} sidebarClassName="sidebar-wrapper">
+  <Sidebar 
+    sidebar={<Components.Sidebar />} 
+    onSetOpen={props.toggleSidebar} 
+    sidebarClassName="sidebar-wrapper"
+    pullRight={true}
+    docked={props.ui.showSidebar}
+  >
 
     <div className="wrapper" id="wrapper">
 
@@ -22,9 +28,7 @@ const FujiLayout = props =>
           <Components.FlashMessages />
 
           <div className="main-content">
-          
-            <a href="#" onClick={props.toggleSidebar}>toggle</a>
-            
+                      
             <div className="center-content">
 
               {props.children}
