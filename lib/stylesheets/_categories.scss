@@ -38,7 +38,7 @@ div.category-menu-item{
   }
 }
 .dropdown-item:focus, .dropdown-item:hover{
-  background: rgba(0,0,0,0.075);
+  background: $primary-color;
 }
 .categories-node{
   .categories-node{
