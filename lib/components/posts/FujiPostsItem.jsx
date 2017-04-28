@@ -24,8 +24,10 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
     let postClass = "posts-item";
     if (post.sticky) postClass += " posts-sticky";
 
-    const mDuration = moment.duration(post.duration, 'seconds');
-    const duration = `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    const formatDuration = duration => {
+      const mDuration = moment.duration(post.media.duration, 'seconds');
+      return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    }
 
     return (
       <div className={postClass}>
@@ -34,7 +36,7 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
           
           {post.thumbnailUrl ? <Components.PostsThumbnail post={post}/> : null}
 
-          {post.duration ? <span className="posts-item-duration">{duration}</span> : null}
+          {post.media && post.media.duration ? <span className="posts-item-duration">{formatDuration(post.media.duration)}</span> : null}
 
           {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
         
@@ -43,7 +45,7 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
         <div className="posts-item-content">
 
           <h3 className="posts-item-title">
-            <Link to={Posts.getLink(post)} className="posts-item-title-link" target={Posts.getLinkTarget(post)}>
+            <Link to={Posts.getPageUrl(post)} className="posts-item-title-link">
               {post.title}
             </Link>
           </h3>

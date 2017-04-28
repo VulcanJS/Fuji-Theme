@@ -15,13 +15,15 @@ const FujiPostsPage = props => {
     const post = props.document;
 
     const htmlBody = {__html: post.htmlBody};
-
+    const media = {__html: post.media && post.media.html};
 
 
     return (
       <div className="posts-page">
         <Components.HeadTags url={Posts.getLink(post)} title={post.title} image={post.thumbnailUrl} />
         
+        <div className="posts-item-media" dangerouslySetInnerHTML={media}></div>
+
         <h2 className="posts-item-title">
           <Link to={Posts.getLink(post)} className="posts-item-title-link" target={Posts.getLinkTarget(post)}>
             {post.title}

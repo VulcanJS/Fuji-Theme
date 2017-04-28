@@ -7,11 +7,6 @@ import Users from 'meteor/vulcan:users';
 const FujiPostsViews = (props, context) => {
 
   let views = ["top", "new", "best"];
-  const adminViews = ["pending", "rejected", "scheduled"];
-
-  if (Users.canDo(props.currentUser, "posts.edit.all")) {
-    views = views.concat(adminViews);
-  }
 
   const query = _.clone(props.router.location.query);
 

@@ -18,12 +18,6 @@
 .posts-item-title{
   margin-bottom: $spacing/2;
 }
-.posts-categories{
-  margin: 0;
-  .posts-category{
-    margin: 5px 5px 5px 0;
-  }
-}
 
 .posts-item-image{
   position: relative;
@@ -61,13 +55,13 @@
     flex-wrap: wrap;
   }
   .posts-item{
-    width: calc((100% - (#{$spacing} * 3))/4);
+    width: calc((100% - (#{$spacing} * 4))/5);
     margin-right: $spacing;
     margin-bottom: $spacing;
     padding: 0;
     display: block;
     border: none;
-    &:nth-child(4n) {
+    &:nth-child(5n) {
       margin-right: 0;
     }
   }
