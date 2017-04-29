@@ -70,9 +70,6 @@ div.category-menu-item{
 }
 
 .categories-new-button{
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid rgba(0,0,0,0.2);
   margin-top: $spacing;
   padding-top: $spacing;
   &:hover{
@@ -98,6 +95,7 @@ div.category-menu-item{
     font-size: 0.8rem;
     border: none;
     background: $lighter-grey;
+    color: $text-color;
     &:hover{
       background: $primary-color;
       color: $dark-grey;

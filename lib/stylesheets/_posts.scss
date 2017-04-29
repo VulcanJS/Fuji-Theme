@@ -1,4 +1,13 @@
 //////////////////////////////////////////////////////
+// Post Home                                        //
+//////////////////////////////////////////////////////
+
+.posts-main-heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+//////////////////////////////////////////////////////
 // Post Item                                        //
 //////////////////////////////////////////////////////
 
@@ -100,7 +109,6 @@
 .posts-page{
   width: 100%;
   background: white;
-  padding: $spacing*3 $spacing*4;
   .posts-item-title{
     font-size: 2.5rem;
     margin-bottom: $spacing*2;
@@ -120,5 +128,15 @@
     .posts-stats{
       margin-right: 5px;
     }
+  }
+  .posts-page-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing;
+    background: $dark-grey;
+  }
+  .posts-page-content{
+    padding: $spacing*2;
   }
 }

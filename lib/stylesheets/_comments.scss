@@ -1,0 +1,83 @@
+.posts-comments-thread{
+  border-top: 1px solid $light-grey;
+  margin-top: $spacing;
+  padding-top: $spacing;
+}
+
+.posts-comments-thread-title{
+  margin-bottom: $spacing;
+}
+
+.comments-list{
+  margin-bottom: $spacing;
+}
+
+.comments-node .comments-node, .comments-item-reply{
+  border-left: 10px $light-grey solid;
+  padding-left: $spacing;
+}
+
+.comments-item{
+  margin-bottom: $spacing;
+}
+
+.comments-item-body{
+  @include border-radius;
+  // max-width: 800px;
+  border: 1px solid $light-grey;
+  padding: $spacing $spacing;
+}
+
+.comments-item-meta{
+  @include flex-center;
+  margin-bottom: $spacing;
+  
+  .comments-item-vote{
+    margin-right: 10px;
+  }
+
+  .users-avatar{
+    margin-right: 5px;
+  }
+  .users-name{
+    margin-right: $spacing;
+  }
+  .comments-item-date{
+    margin-right: $spacing;
+    color: $text-color-medium;
+    font-size: $small-font;
+  }
+  .comment-edit, .comment-delete {
+    font-size: $small-font;
+  }
+  .comment-delete {
+    margin-left: 8px;
+  }
+}
+
+.comments-item-text{
+}
+
+.comments-edit-form, .comments-new-form{
+  .input-body{
+    margin-bottom: $spacing;
+  }
+  .form-cancel{
+    display: inline-block;
+    margin-left: $spacing;
+  }
+}
+
+.comments-item-reply{
+  margin-top: $spacing;
+}
+
+.comment-actions{
+  @include flex-center;
+  button{
+    margin-right: $spacing;
+  }
+  a{
+    display: block;
+  }
+}

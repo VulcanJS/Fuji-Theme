@@ -1,17 +1,5 @@
 //////////////////////////////////////////////////////
-// Logo.                                            //
-//////////////////////////////////////////////////////
-
-.logo-text{
-  a{
-  }
-}
-.tagline{
-  font-weight: normal;
-}
-
-//////////////////////////////////////////////////////
-// Header.                                          //
+// Header                                           //
 //////////////////////////////////////////////////////
 
 .header-wrapper{
@@ -22,11 +10,34 @@
 
 .header{
   max-width: none;
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding: 0;
+  align-items: initial;
+  display: flex;
 }
 
+//////////////////////////////////////////////////////
+// Logo                                             //
+//////////////////////////////////////////////////////
+
+.logo{
+  padding: $spacing/2 $spacing;
+  flex: 1;
+}
+
+.logo-text{
+  a{
+  }
+}
+.tagline{
+  font-weight: normal;
+}
+
+//////////////////////////////////////////////////////
+// Nav                                              //
+//////////////////////////////////////////////////////
+
 .nav{
+  padding-right: $spacing;
   >div{
     margin-left: $spacing;
   }
@@ -45,3 +56,22 @@
   }
 }
 
+//////////////////////////////////////////////////////
+// Sidebar Toggle                                   //
+//////////////////////////////////////////////////////
+
+.sidebar-toggle-wrapper{
+  border-left: 1px solid $light-grey;
+}
+
+.sidebar-toggle{
+    height: 100%;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      background: $primary-color;
+      color: $text-color;
+    }
+  }

@@ -29,13 +29,11 @@ const FujiLayout = props =>
 
           <div className="main-content">
                       
-            <div className="center-content">
-
-              {props.children}
-
-            </div>
+            {props.children}
 
           </div>
+          
+          <Components.Newsletter />
           
         </div>
 

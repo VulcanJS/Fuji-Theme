@@ -2,10 +2,10 @@
   background: $primary-color;
   border-radius: 0;
   border: none;
-  margin: $spacing*2 auto;
+  margin: $spacing auto 0 auto;
   padding: $spacing*2;
 }
-.newsletter-button{
+.newsletter-button.btn.btn-primary{
   background: $dark-grey;
   color: white;
   &:hover{

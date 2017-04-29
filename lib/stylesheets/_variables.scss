@@ -1,5 +1,11 @@
 $spacing: 20px;
 
+$smaller-font: 0.8rem;
+$small-font: 0.9rem;
+$medium-font: 1rem;
+$large-font: 1.25rem;
+$larger-font: 1.35rem;
+
 @mixin primary-font{
   font-family: 'Work Sans', sans-serif !important;
 }
@@ -14,4 +20,13 @@ $spacing: 20px;
 
 @mixin primary-gradient-hover{
   background: linear-gradient(#FFF657, #F5DC2B);
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+}
+
+@mixin border-radius{
+  border-radius: 3px;
 }

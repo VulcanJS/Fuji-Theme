@@ -29,7 +29,7 @@ Package.onUse(function (api) {
     'vulcan:subscribe',
 
     'vulcan:base-components',
-    'vulcan:base-styles',
+    // 'vulcan:base-styles',
     'vulcan:email-templates',
     
     'http',
