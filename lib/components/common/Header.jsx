@@ -6,7 +6,7 @@ import Posts from 'meteor/vulcan:posts';
 const FujiHeader = (props, context) => {
   
   const logoUrl = getSetting("logoUrl");
-  const siteTitle = getSetting("title", "Vulcan");
+  const siteTitle = getSetting("title", "Fuji");
   const tagline = getSetting("tagline");
 
   return (
@@ -19,28 +19,14 @@ const FujiHeader = (props, context) => {
           {tagline ? <h2 className="tagline">{tagline}</h2> : "" }
         </div>
         
-        <div className="nav">
-          
-          <div className="nav-links">
-            <Link to="/about">About</Link>
-          </div>
+        <Components.Nav/>
 
-          <div className="nav-user">
-            {!!props.currentUser ? <Components.UsersMenu/> : <Components.UsersAccountMenu/>}
-          </div>
-
-          <Components.ShowIf check={Posts.options.mutations.new.check}>
-            <div className="nav-new-post">
-              <Components.PostsNewButton/>
-            </div>
-          </Components.ShowIf>
-
-        </div>
-
+        <Components.SidebarToggle/>
+        
       </header>
+
     </div>
   )
 }
-
 
 replaceComponent('Header', FujiHeader);

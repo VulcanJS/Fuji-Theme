@@ -1,52 +1,76 @@
 //////////////////////////////////////////////////////
-// Logo                                             //
+// Header                                           //
 //////////////////////////////////////////////////////
 
-.logo-text{
-  a{
-    color: $white;
-    &:hover{
-      color: $primary-color;
-    }
-  }
-}
-.tagline{
-  color: rgba(255,255,255,0.7);
-  font-weight: normal;
-}
-
 .header-wrapper{
-  background: #151515;
+  background: $white;
+  border-bottom: 1px $light-grey solid;
+  margin-bottom: 0;
 }
 
 .header{
-  color: white;
+  max-width: none;
+  padding: 0;
+  align-items: initial;
+  display: flex;
 }
+
+//////////////////////////////////////////////////////
+// Logo                                             //
+//////////////////////////////////////////////////////
+
+.logo{
+  padding: $spacing/2 $spacing;
+  flex: 1;
+  @include flex-center;
+}
+
+.logo-text{
+  margin: 0 $spacing/2 0 0;
+}
+
+.logo-image{
+  margin: 0 $spacing/2 0 0;
+  img{
+    max-width: 150px;
+    max-height: 100px;
+  }
+}
+
+.tagline{
+  margin: 0;
+  @include font-normal;
+  font-size: $larger-font;
+}
+
+//////////////////////////////////////////////////////
+// Nav                                              //
+//////////////////////////////////////////////////////
 
 .nav{
-  >div{
-    margin-left: $spacing;
-  }
+  @include flex-center;
 }
 
-.nav-links{
-  a{
-    color: white;
-    @include secondary-font;
-    font-weight: bold;
-    margin-left: $spacing;
-  }
+.nav-item{
+  margin-right: $spacing;
 }
 
-.users-menu, .users-account-menu{
-  .btn-default{
-    color: white;
-  }
+//////////////////////////////////////////////////////
+// Sidebar Toggle                                   //
+//////////////////////////////////////////////////////
+
+.sidebar-toggle-wrapper{
+  border-left: 1px solid $light-grey;
 }
 
-.btn.posts-new-button{
-  &:hover{
-    background: $white;
-    color: $dark-grey;
+.sidebar-toggle{
+    height: 100%;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      background: $primary-color;
+      color: $text-color;
+    }
   }
-}

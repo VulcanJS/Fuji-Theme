@@ -1,7 +1,17 @@
 $spacing: 20px;
 
+$smaller-font: 0.8rem;
+$small-font: 0.9rem;
+$medium-font: 1rem;
+$large-font: 1.25rem;
+$larger-font: 1.35rem;
+
+@mixin primary-font{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 @mixin secondary-font{
-  font-family: 'Chivo', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 @mixin primary-gradient{
@@ -10,4 +20,21 @@ $spacing: 20px;
 
 @mixin primary-gradient-hover{
   background: linear-gradient(#FFF657, #F5DC2B);
+}
+
+@mixin font-normal{
+  font-weight: 400;
+}
+
+@mixin font-bold{
+  font-weight: 600;
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+}
+
+@mixin border-radius{
+  border-radius: 3px;
 }

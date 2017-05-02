@@ -1,0 +1,72 @@
+//////////////////////////////////////////////////////
+// Accounts                                         //
+//////////////////////////////////////////////////////
+
+.users-account-menu, .users-menu{
+  .dropdown-toggle{
+    @include flex-center;
+    padding: 0;
+    &, &:active, &:focus{
+      background: none;
+    }
+    img{
+      margin-right: 5px;
+    }
+    &:hover, &:active, &:focus{
+      color: $primary-color;
+    }
+  }
+}
+
+.accounts-ui{
+  padding: $spacing;
+  min-width: 240px;
+  .buttons{
+    .btn{
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: $spacing;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.accounts-ui{
+  .buttons{
+    a{
+      display:block;
+      text-align: center;
+      margin-bottom: $spacing;
+    }
+  }
+  .password-or-service{
+    text-align: center;
+    margin-bottom: $spacing;
+  }
+  .social-buttons{
+    @include flex-center;
+    justify-content: space-between;
+    button{
+      margin-right: $spacing;
+      width: 100%;
+      &.btn-twitter{
+        background: #55acee;
+        border-color: #55acee;
+      }
+      &.btn-facebook{
+        background: #3b5998;
+        border-color: #3b5998;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.password-reset-form{
+  text-align: center;
+}

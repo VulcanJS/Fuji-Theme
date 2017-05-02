@@ -4,11 +4,11 @@ import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Dropdown, MenuItem } from 'react-bootstrap';
 
-const FujiPostsCategories = ({post}) => {
+const FujiPostsCategories = ({post, showAll = false}) => {
 
   const categoriesDisplayed = 3;
 
-  if (post.categories.length <= categoriesDisplayed) {
+  if (post.categories.length <= categoriesDisplayed || showAll) {
     return (
       <div className="posts-categories">
         {post.categories.map(category => 

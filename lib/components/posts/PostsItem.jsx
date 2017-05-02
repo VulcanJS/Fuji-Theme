@@ -3,6 +3,7 @@ import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 import { Link } from 'react-router';
 import Posts from "meteor/vulcan:posts";
+import moment from 'moment';
 
 class FujiPostsItem extends getRawComponent('PostsItem') {
   
@@ -23,12 +24,19 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
     let postClass = "posts-item";
     if (post.sticky) postClass += " posts-sticky";
 
+    const formatDuration = duration => {
+      const mDuration = moment.duration(post.media.duration, 'seconds');
+      return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    }
+
     return (
       <div className={postClass}>
 
         <div className="posts-item-image">
           
           {post.thumbnailUrl ? <Components.PostsThumbnail post={post}/> : null}
+
+          {post.media && post.media.duration ? <span className="posts-item-duration">{formatDuration(post.media.duration)}</span> : null}
 
           {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
         
@@ -37,7 +45,7 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
         <div className="posts-item-content">
 
           <h3 className="posts-item-title">
-            <Link to={Posts.getLink(post)} className="posts-item-title-link" target={Posts.getLinkTarget(post)}>
+            <Link to={Posts.getPageUrl(post)} className="posts-item-title-link">
               {post.title}
             </Link>
           </h3>

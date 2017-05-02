@@ -4,10 +4,15 @@
 }
 
 //////////////////////////////////////////////////////
-// Categories Menu                                  //
+// Sidebar Categories                               //
 //////////////////////////////////////////////////////
 
-div.category-menu-item{
+.sidebar-categories{
+  padding: $spacing/2 0;
+  border-bottom: 1px solid $light-grey;
+}
+
+.category-menu-item{
   display: flex;
   justify-content: space-between;
   padding: $spacing/4 $spacing $spacing/4 $spacing/2;
@@ -65,9 +70,6 @@ div.category-menu-item{
 }
 
 .categories-new-button{
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid rgba(0,0,0,0.2);
   margin-top: $spacing;
   padding-top: $spacing;
   &:hover{
@@ -83,13 +85,25 @@ div.category-menu-item{
   width: auto;
 }
 
-.posts-categories a{
-  font-weight: normal;
-  font-size: 0.8rem;
-  &:hover{
-    background: $primary-color;
-    color: $dark-grey;
-    border-color: $primary-color;
+.posts-categories{
+  margin: 0;
+  &>.posts-category, .categories-dropdown{
+    margin: 0px 5px 5px 0;
+  }
+  .posts-category, .dropdown-item a{
+    white-space: nowrap;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: normal;
+    font-size: 0.8rem;
+    border: none;
+    background: $lighter-grey;
+    color: $text-color;
+    &:hover{
+      background: $primary-color;
+      color: $dark-grey;
+      border-color: $primary-color;
+    }
   }
 }
 
@@ -100,6 +114,9 @@ div.category-menu-item{
     padding: 0;
     &:after{
       display: none;
+    }
+    a{
+      height: 23px;
     }
   }
   .dropdown-menu{
@@ -112,20 +129,22 @@ div.category-menu-item{
       margin-bottom: 0;
     }
     a{
+      display: block;
       margin: 0;
     }
   }
 }
 
 //////////////////////////////////////////////////////
-// Categories Headings                              //
+// Category Heading.                                //
 //////////////////////////////////////////////////////
 
 .category-heading{
   display: flex;
-  background: $light-grey;
+  background: $white;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  margin-bottom: $spacing;
 }
 
 .category-heading-item{
@@ -155,7 +174,7 @@ div.category-menu-item{
 
   &:after {
     border-color: rgba(255, 255, 255, 0);
-    border-left-color: $light-grey;
+    border-left-color: $white;
     border-width: 42px;
     margin-top: -42px;
   }

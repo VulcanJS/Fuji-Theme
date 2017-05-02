@@ -29,22 +29,19 @@ Package.onUse(function (api) {
     'vulcan:subscribe',
 
     'vulcan:base-components',
-    'vulcan:base-styles',
+    // 'vulcan:base-styles',
     'vulcan:email-templates',
     
     'http',
-    'static-html',
 
     'fourseven:scss@4.5.0',
 
     // 'vulcan:forms-tags',
   ]);
 
-  api.addFiles("lib/head.html", "client");
-
   api.addFiles("lib/stylesheets/main.scss", "client");
 
-  api.mainModule("lib/server.js", "server");
-  api.mainModule("lib/client.js", "client");
+  api.mainModule("lib/server/main.js", "server");
+  api.mainModule("lib/client/main.js", "client");
 
 });
