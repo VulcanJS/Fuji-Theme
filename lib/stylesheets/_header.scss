@@ -13,6 +13,10 @@
   padding: 0;
   align-items: initial;
   display: flex;
+  height: $headerHeightMedium;
+  @include small{
+    height: $headerHeightSmall;
+  }
 }
 
 //////////////////////////////////////////////////////
@@ -34,6 +38,10 @@
   img{
     max-width: 150px;
     max-height: 100px;
+    @include small{
+      max-width: 100px;
+      max-height: 40px;
+    }
   }
 }
 
@@ -41,11 +49,37 @@
   margin: 0;
   @include font-normal;
   font-size: $larger-font;
+  @include small{
+    display: none;
+  }
 }
 
 //////////////////////////////////////////////////////
 // Nav                                              //
 //////////////////////////////////////////////////////
+
+@mixin mobile-nav-item {
+  height: 100%;
+  border-left: 1px solid $light-grey;
+  margin: 0;
+  div{
+    height: 100%;
+  }
+  .btn{
+    height: 100%;
+    @include flex-center;
+    justify-content: center;
+    background: none;
+    width: $headerHeightSmall;
+    span{
+      display: none;
+    }
+    &:hover{
+      background: $primary-color;
+      color: $white;
+    }
+  }
+}
 
 .nav{
   @include flex-center;
@@ -53,6 +87,33 @@
 
 .nav-item{
   margin-right: $spacing;
+  @include medium-large{
+    .icon{
+      display: none;
+    }
+  }
+}
+
+.nav-user{
+  @include small{
+    @include mobile-nav-item;
+    .btn:after{
+      display: none;
+    }
+    .dropdown{
+      position: static;
+    }
+    .dropdown-menu{
+      top: 50px;
+      width: 100%;
+    }
+  }
+}
+
+.nav-new-post{
+  @include small{
+    @include mobile-nav-item;
+  }
 }
 
 //////////////////////////////////////////////////////
@@ -65,12 +126,15 @@
 
 .sidebar-toggle{
     height: 100%;
-    width: 72px;
+    width: $headerHeightMedium;
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover{
       background: $primary-color;
-      color: $text-color;
+      color: $white;
+    }
+    @include small{
+      width: $headerHeightSmall;
     }
   }

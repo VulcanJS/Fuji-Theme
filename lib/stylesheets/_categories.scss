@@ -91,6 +91,7 @@
     margin: 0px 5px 5px 0;
   }
   .posts-category, .dropdown-item a{
+    display: inline-block;
     white-space: nowrap;
     padding: 2px 6px;
     border-radius: 3px;
@@ -136,7 +137,7 @@
 }
 
 //////////////////////////////////////////////////////
-// Category Heading.                                //
+// Category Heading                                 //
 //////////////////////////////////////////////////////
 
 .category-heading{
@@ -151,11 +152,12 @@
   @include secondary-font;
   position: relative;
   padding: $spacing;
-  font-size: 1.3rem;
+  font-size: $larger-font;
   position: relative;
   margin-right: $spacing * 3;
   padding-left: $spacing * 4;
   margin-left: - $spacing * 3;
+  white-space: nowrap;
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       z-index: #{(10 - $i) * 10};
@@ -194,5 +196,8 @@
     &:after{
       border-left-color: $primary-color;
     }
+  }
+  @include small{
+    font-size: $small-font;
   }
 }

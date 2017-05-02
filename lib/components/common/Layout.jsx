@@ -2,50 +2,88 @@ import { Components, replaceComponent } from 'meteor/vulcan:lib';
 import React, { PropTypes, Component } from 'react';
 import Sidebar from 'react-sidebar';
 import withUI from '../../containers/withUI.js';
+import classNames from 'classnames';
 
-const FujiLayout = props => 
+const smallBreak = 850;
+
+class FujiLayout extends React.Component {
   
-  <Sidebar 
-    sidebar={<Components.Sidebar />} 
-    onSetOpen={props.toggleSidebar} 
-    sidebarClassName="sidebar-wrapper"
-    pullRight={true}
-    docked={props.ui.showSidebar}
-  >
+  constructor(props) {
+    super();
+  }
 
-    <div className="wrapper" id="wrapper">
+  componentWillMount() {
+    if (typeof window !== 'undefined') {
 
-      <Components.HeadTags />
+      const mql1 = window.matchMedia(`(max-width: ${smallBreak}px)`);
+      const mql2 = window.matchMedia(`(min-width: ${smallBreak+1}px)`);
 
-      <Components.UsersProfileCheck {...props} />
+      const setBp1 = () => {
+        if (window.innerWidth <= smallBreak) this.props.setBreakPoint('small');
+      };
+      const setBp2 = () => {
+        if (window.innerWidth > smallBreak) this.props.setBreakPoint('medium')
+      };
+      
+      if (mql1.matches) setBp1();
+      if (mql2.matches) setBp2();
 
-      <Components.Header {...props}/>
-    
-      <div className="main-wrapper">
+      mql1.addListener(setBp1);
+      mql2.addListener(setBp2);
+    }
+  }
 
-        <div className="main">
+  render() {
 
-          <Components.FlashMessages />
+    return (
+  
+      <Sidebar 
+        sidebar={<Components.Sidebar />} 
+        onSetOpen={this.props.toggleSidebar} 
+        sidebarClassName="sidebar-wrapper"
+        pullRight={true}
+        docked={this.props.ui.showSidebar && this.props.ui.breakpoint === 'medium'}
+        open={this.props.ui.showSidebar && this.props.ui.breakpoint === 'small'}
+      >
 
-          <div className="main-content">
-                      
-            {props.children}
+        <div className={classNames('wrapper', `wrapper-${this.props.ui.breakpoint}`)} id="wrapper">
+
+          <Components.HeadTags />
+
+          <Components.UsersProfileCheck currentUser={this.props.currentUser} documentId={this.props.currentUser && props.currentUser._id} />
+
+          <Components.Header />
+        
+          <div className="main-wrapper">
+
+            <div className="main">
+
+              <Components.FlashMessages />
+
+              <div className="main-content">
+                          
+                {this.props.children}
+
+              </div>
+              
+              <Components.Newsletter />
+              
+            </div>
+
+            {/*<Components.Newsletter />*/}
 
           </div>
-          
-          <Components.Newsletter />
-          
+        
+
+          <Components.Footer />
+        
         </div>
 
-        {/*<Components.Newsletter />*/}
+      </Sidebar>
 
-      </div>
-    
+    )
 
-      <Components.Footer {...props}/>
-    
-    </div>
+  }
 
-  </Sidebar>
-
+}
 replaceComponent('Layout', FujiLayout, withUI);

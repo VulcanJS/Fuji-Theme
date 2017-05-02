@@ -13,9 +13,13 @@
 //////////////////////////////////////////////////////
 
 .search-form{
-  padding: 17px;
+  padding: 0 15px;
   width: 100%;
   border-bottom: 1px solid $light-grey;
   display: flex;
   align-items: center;
+  height: $headerHeightMedium + 1;
+  form, input{
+    width: 100%;
+  }
 }

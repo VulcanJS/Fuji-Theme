@@ -25,6 +25,12 @@
   .form-control{
     margin: 0 5px 0 0;
   }
+  @include small{
+    flex-direction: column;
+    .form-control{
+      margin: 0 0 $spacing/2 0;
+    }
+  }
 }
 
 .newsletter-button{

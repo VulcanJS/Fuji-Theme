@@ -1,5 +1,5 @@
-$small-break:  600px;
-$medium-break: 800px;
+$small-break:  850px;
+$medium-break: 1000px;
 
 @mixin small(){ // smaller than small-break
   @media screen and (max-width: $small-break) {

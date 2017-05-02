@@ -4,6 +4,7 @@
 
 .users-account-menu, .users-menu{
   .dropdown-toggle{
+    border-radius: 0;
     @include flex-center;
     padding: 0;
     &, &:active, &:focus{

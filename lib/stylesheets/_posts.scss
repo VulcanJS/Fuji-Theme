@@ -27,8 +27,14 @@
 .posts-list-content{
   border-top: none;
   margin-bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
+  
+  @include small{
+
+  }
+  @include medium-large{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .posts-load-more{
@@ -60,14 +66,13 @@
 .posts-item{
   background: $white;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  width: calc((100% - (#{$spacing} * 4))/5);
-  margin-right: $spacing;
   margin-bottom: $spacing;
-  padding: 0;
-  display: block;
-  border: none;
-  &:nth-child(5n) {
-    margin-right: 0;
+  @include medium-large{
+    width: calc((100% - (#{$spacing} * 4))/5);
+    margin-right: $spacing;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -124,8 +129,11 @@
 }
 
 .posts-page-title{
-  font-size: 2.5rem;
+  font-size: $largest-font;
   margin-bottom: $spacing/2;
+  @include small{
+    font-size: $larger-font
+  }
 }
 
 .posts-page-user{
@@ -157,12 +165,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $spacing;
   background: $dark-grey;
+  @include medium-large{
+    padding: $spacing;
+  }
+  @include small{
+    iframe{
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .posts-page-content{
   padding: $spacing*2;
+  @include small{
+    padding: $spacing;
+  }
 }
 
 .posts-stats{

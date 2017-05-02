@@ -5,6 +5,10 @@ $small-font: 0.9rem;
 $medium-font: 1rem;
 $large-font: 1.25rem;
 $larger-font: 1.35rem;
+$largest-font: 2.5rem;
+
+$headerHeightSmall: 50px;
+$headerHeightMedium: 64px;
 
 @mixin primary-font{
   font-family: 'Source Sans Pro', sans-serif;
