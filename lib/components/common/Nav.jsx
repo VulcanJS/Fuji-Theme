@@ -1,15 +1,15 @@
-import { Components, registerComponent } from 'meteor/vulcan:lib';
+import { Components, registerComponent, withCurrentUser } from 'meteor/vulcan:core';
 import React from 'react';
 
 const FujiNav = ({currentUser}) =>
 
   <div className="nav">
 
-    <div className="nav-user">
+    <div className="nav-item nav-user">
       {!!currentUser ? <Components.UsersMenu/> : <Components.UsersAccountMenu/>}
     </div>
 
-    <div className="nav-new-post">
+    <div className="nav-item nav-new-post">
       <Components.PostsNewButton/>
     </div>
 
@@ -17,4 +17,4 @@ const FujiNav = ({currentUser}) =>
 
 FujiNav.displayName = 'FujiNav';
 
-registerComponent('Nav', FujiNav);
+registerComponent('Nav', FujiNav, withCurrentUser);

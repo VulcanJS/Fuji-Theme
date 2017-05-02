@@ -30,13 +30,15 @@ const FujiPostsPage = props => {
 
         <div className="posts-page-content">
 
-          <h2 className="posts-item-title">
+          <h2 className="posts-page-title">
             <Link to={Posts.getLink(post)} className="posts-item-title-link" target={Posts.getLinkTarget(post)}>
               {post.title}
             </Link>
           </h2>
 
           {/*props.currentUser ? <Components.FujiVideo post={post}/> : <Components.FujiVideoNoAccess post={post}/> */}
+
+          {post.user? <div className="posts-page-user"><Components.UsersAvatar user={post.user} size="small"/><Components.UsersName user={post.user}/></div> : null}
 
           {post.htmlBody ? <div className="posts-page-body" dangerouslySetInnerHTML={htmlBody}></div> : null}
 

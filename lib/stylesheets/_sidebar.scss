@@ -1,16 +1,21 @@
+//////////////////////////////////////////////////////
+// Sidebar                                          //
+//////////////////////////////////////////////////////
+
 .sidebar-wrapper{
   background: $white;
   width: 100%;
   max-width: 250px;
 }
-.sidebar{
-  // border-radius: 3px 0 0 3px;
-  // box-shadow: inset -5px 0px 10px 0px rgba(0,0,0,0.1);
-  .search-form{
-    padding: 17px;
-    width: 100%;
-    border-bottom: 1px solid $light-grey;
-    display: flex;
-    align-items: center;
-  }
+
+//////////////////////////////////////////////////////
+// Search                                           //
+//////////////////////////////////////////////////////
+
+.search-form{
+  padding: 17px;
+  width: 100%;
+  border-bottom: 1px solid $light-grey;
+  display: flex;
+  align-items: center;
 }

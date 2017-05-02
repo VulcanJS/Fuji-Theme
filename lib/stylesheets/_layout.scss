@@ -4,11 +4,11 @@
 .header-wrapper{
 }
 .main-wrapper{
-  background: $lightest-grey;
 }
 .main{
   padding: $spacing*2 $spacing;
-  margin-bottom: 0;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .main-content{
 }

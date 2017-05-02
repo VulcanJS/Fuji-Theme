@@ -22,14 +22,25 @@
 .logo{
   padding: $spacing/2 $spacing;
   flex: 1;
+  @include flex-center;
 }
 
 .logo-text{
-  a{
+  margin: 0 $spacing/2 0 0;
+}
+
+.logo-image{
+  margin: 0 $spacing/2 0 0;
+  img{
+    max-width: 150px;
+    max-height: 100px;
   }
 }
+
 .tagline{
-  font-weight: normal;
+  margin: 0;
+  @include font-normal;
+  font-size: $larger-font;
 }
 
 //////////////////////////////////////////////////////
@@ -37,23 +48,11 @@
 //////////////////////////////////////////////////////
 
 .nav{
-  padding-right: $spacing;
-  >div{
-    margin-left: $spacing;
-  }
+  @include flex-center;
 }
 
-.nav-links{
-  a{
-    @include secondary-font;
-    font-weight: bold;
-    margin-left: $spacing;
-  }
-}
-
-.users-menu, .users-account-menu{
-  .btn-default{
-  }
+.nav-item{
+  margin-right: $spacing;
 }
 
 //////////////////////////////////////////////////////

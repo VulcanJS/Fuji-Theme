@@ -1,26 +1,89 @@
 //////////////////////////////////////////////////////
-// Post Home                                        //
+// Posts Home                                       //
 //////////////////////////////////////////////////////
 
 .posts-main-heading{
   display: flex;
   justify-content: space-between;
+  margin-bottom: $spacing/2;
+  h3{
+    text-transform: uppercase;
+    font-size: $large-font;
+    margin: 0;
+  }
+  a{
+    font-size: $small-font;
+  }
 }
 
 //////////////////////////////////////////////////////
-// Post Item                                        //
+// Posts List                                       //
+//////////////////////////////////////////////////////
+
+.posts-list-block{
+  margin-bottom: $spacing;
+}
+
+.posts-list-content{
+  border-top: none;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.posts-load-more{
+  margin-bottom: $spacing;
+  display: block;
+  text-align: center;
+  padding: $spacing;
+  background: $primary-color;
+  border-radius: 0;
+  border: none;
+  @include secondary-font;
+  font-weight: bold;
+  &:hover{
+    background: $dark-grey;
+    color: white;
+  }
+}
+
+.posts-no-more{
+  text-align: center;
+  padding: $spacing;
+}
+
+
+//////////////////////////////////////////////////////
+// Posts Item                                       //
 //////////////////////////////////////////////////////
 
 .posts-item{
   background: $white;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  width: calc((100% - (#{$spacing} * 4))/5);
+  margin-right: $spacing;
+  margin-bottom: $spacing;
+  padding: 0;
+  display: block;
+  border: none;
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
 }
+
+.posts-item-title{
+  font-size: 1.1rem;
+}
+
 .posts-item-content{
   padding: $spacing/2;
 }
+
 .posts-thumbnail{
+  width: 100%;
   img{
-    width: 180px;
+    display: block;
+    width: 100%;
     height: auto;
   }
 }
@@ -30,113 +93,107 @@
 
 .posts-item-image{
   position: relative;
-  .posts-thumbnail{
-  }
-  .posts-actions{
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    padding: $spacing/4;
-    background: rgba(0,0,0,0.6);
-    color: white;
-  }
-  .posts-item-duration{
-    font-size: 0.65rem;
-    position: absolute;
-    right: 6px;
-    bottom: 6px;
-    padding: 2px 5px;
-    background: rgba(0,0,0,0.6);
-    color: white;
+}
 
-  }
+.posts-actions{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  padding: $spacing/4;
+  background: rgba(0,0,0,0.6);
+  color: white;
+}
+
+.posts-item-duration{
+  font-size: 0.65rem;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 2px 5px;
+  background: rgba(0,0,0,0.6);
+  color: white;
 }
 
 //////////////////////////////////////////////////////
-// Post List                                        //
-//////////////////////////////////////////////////////
-
-.posts-list{
-  .posts-list-content{
-    border-top: none;
-    margin-bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .posts-item{
-    width: calc((100% - (#{$spacing} * 4))/5);
-    margin-right: $spacing;
-    margin-bottom: $spacing;
-    padding: 0;
-    display: block;
-    border: none;
-    &:nth-child(5n) {
-      margin-right: 0;
-    }
-  }
-  .posts-item-title{
-    font-size: 1.1rem;
-  }
-  .posts-thumbnail{
-    width: 100%;
-    img{
-      width: 100%;
-    }
-  }
-  a.posts-load-more{
-    background: $primary-color;
-    border-radius: 0;
-    border: none;
-    @include secondary-font;
-    font-weight: bold;
-    &:hover{
-      background: $dark-grey;
-      color: white;
-    }
-  }
-
-  .posts-no-more{
-    text-align: center;
-    padding: $spacing;
-  }
-}
-
-
-//////////////////////////////////////////////////////
-// Post Page                                        //
+// Posts Page                                       //
 //////////////////////////////////////////////////////
 
 .posts-page{
   width: 100%;
   background: white;
-  .posts-item-title{
-    font-size: 2.5rem;
-    margin-bottom: $spacing*2;
-  }
+}
 
-  .posts-page-extra{
-    display: flex;
-    align-items: center;
-    .vote{
-      margin-right: $spacing/2;
+.posts-page-title{
+  font-size: 2.5rem;
+  margin-bottom: $spacing/2;
+}
+
+.posts-page-user{
+  margin-bottom: $spacing/2;
+  @include flex-center;
+  .users-avatar{
+    margin-right: 5px;
+  }
+}
+
+.posts-page-extra{
+  display: flex;
+  align-items: center;
+  .vote{
+    margin-right: $spacing/2;
+  }
+}
+
+.posts-page-meta{
+  display: flex;
+  margin-left: 5px;
+}
+
+.posts-stats{
+  margin-right: 5px;
+}
+
+.posts-page-video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing;
+  background: $dark-grey;
+}
+
+.posts-page-content{
+  padding: $spacing*2;
+}
+
+.posts-stats{
+  @include small{
+    margin-bottom: $spacing/2;
+    display: inline-block;
+  }
+  border: 1px solid $light-grey;
+  border-radius: 3px;
+  font-size: $smaller-font;
+  .posts-stats-item{
+    border-right: 1px solid $light-grey;
+    padding: 2px 5px;
+    display: inline-block;
+    &:last-child{
+      border: none;
     }
   }
+}
 
-  .posts-page-meta{
-    display: flex;
-    margin-left: 5px;
-    .posts-stats{
-      margin-right: 5px;
-    }
-  }
-  .posts-page-video{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: $spacing;
-    background: $dark-grey;
-  }
-  .posts-page-content{
-    padding: $spacing*2;
-  }
+//////////////////////////////////////////////////////
+// Posts Edit Form                                  //
+//////////////////////////////////////////////////////
+
+.posts-edit-form-header{
+  @include flex-center;
+  justify-content: space-between;
+}
+
+.posts-edit-form-admin{
+  @include flex-center;
+  justify-content: space-between;
+  margin-bottom: $spacing * 2;
 }
