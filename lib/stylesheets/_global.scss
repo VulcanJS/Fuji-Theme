@@ -34,8 +34,24 @@ a{
   }
 }
 
+.wrapper{
+  @include small{
+    // overflow: hidden;
+  }
+}
+
+.main{
+  padding: $spacing*2 $spacing;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .page{
   background: $white;
   padding: $spacing;
   border: 1px solid $light-grey;
+}
+
+.modal-trigger{
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { Components, replaceComponent, getRawComponent } from 'meteor/vulcan:lib';
+import { Components, registerComponent, replaceComponent, getRawComponent } from 'meteor/vulcan:lib';
 import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 import { Link } from 'react-router';
@@ -17,17 +17,17 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
     )
   }
 
+  formatDuration(duration) {
+    const mDuration = moment.duration(this.props.post.media.duration, 'seconds');
+    return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+  }
+
   render() {
 
-    const {post} = this.props;
+    const post = this.props.post;
 
     let postClass = "posts-item";
     if (post.sticky) postClass += " posts-sticky";
-
-    const formatDuration = duration => {
-      const mDuration = moment.duration(post.media.duration, 'seconds');
-      return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
-    }
 
     return (
       <div className={postClass}>
@@ -36,7 +36,7 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
           
           {post.thumbnailUrl ? <Components.PostsThumbnail post={post}/> : null}
 
-          {post.media && post.media.duration ? <span className="posts-item-duration">{formatDuration(post.media.duration)}</span> : null}
+          {post.media && post.media.duration ? <span className="posts-item-duration">{this.formatDuration(post.media.duration)}</span> : null}
 
           {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
         
@@ -71,4 +71,5 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
   }
 }
 
+registerComponent('FujiPostsItem', FujiPostsItem);
 replaceComponent('PostsItem', FujiPostsItem);

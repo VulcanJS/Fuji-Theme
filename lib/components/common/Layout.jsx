@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const smallBreak = 850;
 
-class FujiLayout extends React.Component {
+class FujiLayout extends Component {
   
   constructor(props) {
     super();
@@ -50,7 +50,7 @@ class FujiLayout extends React.Component {
 
           <Components.HeadTags />
 
-          <Components.UsersProfileCheck currentUser={this.props.currentUser} documentId={this.props.currentUser && props.currentUser._id} />
+          <Components.UsersProfileCheck currentUser={this.props.currentUser} documentId={this.props.currentUser && this.props.currentUser._id} />
 
           <Components.Header />
         

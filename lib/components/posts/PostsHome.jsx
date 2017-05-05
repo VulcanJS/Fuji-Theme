@@ -2,7 +2,7 @@ import { Components, replaceComponent } from 'meteor/vulcan:core';
 import React, { PropTypes, Component } from 'react';
 
 const containsFilteringOptions = query => {
-  const filteringOptions = ["view", "after", "before", "cat", "query"];
+  const filteringOptions = ['view', 'after', 'before', 'cat', 'query', 'place'];
   return  _.intersection(_.keys(query), filteringOptions).length > 0;
 }
 

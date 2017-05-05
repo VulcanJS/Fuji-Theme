@@ -31,11 +31,18 @@
 
 .logo-text{
   margin: 0 $spacing/2 0 0;
+  @include small{
+    font-size: $large-font;
+  }
 }
 
 .logo-image{
-  margin: 0 $spacing/2 0 0;
+  margin: 0 $spacing 0 0;
+  a{
+    display: block;
+  }
   img{
+    display: block;
     max-width: 150px;
     max-height: 100px;
     @include small{
@@ -43,12 +50,15 @@
       max-height: 40px;
     }
   }
+  @include small{
+    margin-right: 0;
+  }
 }
 
 .tagline{
   margin: 0;
   @include font-normal;
-  font-size: $larger-font;
+  font-size: $medium-font;
   @include small{
     display: none;
   }
@@ -83,6 +93,9 @@
 
 .nav{
   @include flex-center;
+  @include small{
+    height: 100%;
+  }
 }
 
 .nav-item{
@@ -107,6 +120,13 @@
       top: 50px;
       width: 100%;
     }
+    .dropdown-toggle{
+      @include flex-center;
+    }
+    .icon{
+      display: block;
+      flex: 1;
+    }
   }
 }
 
@@ -122,9 +142,12 @@
 
 .sidebar-toggle-wrapper{
   border-left: 1px solid $light-grey;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-toggle{
+    flex: 1;
     height: 100%;
     width: $headerHeightMedium;
     display: flex;

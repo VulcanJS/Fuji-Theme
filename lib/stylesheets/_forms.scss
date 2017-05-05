@@ -39,7 +39,7 @@ div.ReactTags__selected {
   float: left;
   display: flex;
   align-items: center;
-  margin-left: -5px;
+  // margin-left: -5px;
 }
 div.ReactTags__selected span.ReactTags__tag {
   border: 1px solid #ddd;
@@ -47,7 +47,8 @@ div.ReactTags__selected span.ReactTags__tag {
   font-size: 12px;
   display: inline-block;
   padding: 5px;
-  margin: 0 5px;
+  // margin: 0 5px;
+  margin-right: 5px;
   // cursor: move;
   border-radius: 2px;
 }
@@ -84,7 +85,10 @@ div.ReactTags__suggestions ul li.active {
   cursor: pointer;
 }
 
-div.ReactTags__suggestions mark{
+
+//-----
+
+.ReactTags__suggestions mark{
   padding: 0;
 }
 

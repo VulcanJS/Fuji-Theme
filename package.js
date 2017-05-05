@@ -1,5 +1,5 @@
 Package.describe({
-  name: "theme-fuji"
+  name: "vulcan:theme-fuji"
 });
 
 Package.onUse(function (api) {

@@ -52,6 +52,9 @@
     justify-content: space-between;
     button{
       margin-right: $spacing;
+      &:last-child{
+        margin-right: 0 !important;
+      }
       width: 100%;
       &.btn-twitter{
         background: #55acee;
@@ -70,4 +73,8 @@
 
 .password-reset-form{
   text-align: center;
+}
+
+.btn-facebook{
+  color: $white;
 }
