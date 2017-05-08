@@ -37,6 +37,7 @@
   font-weight: normal;
   color: #333;
   &:hover{
+    color: $white;
   }
   .categories-node-level-1>.category-menu-item &{
     font-weight: bold;

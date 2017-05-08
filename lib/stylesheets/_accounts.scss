@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////
 
 .users-account-menu, .users-menu{
+  top: -3px;
   .dropdown-toggle{
     border-radius: 0;
     @include flex-center;

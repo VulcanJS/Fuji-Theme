@@ -40,6 +40,15 @@ a{
   }
 }
 
+.dropdown-item{
+  a:hover{
+    color: $text-color;
+  }
+  &.active, &.active:hover{
+    background: $primary-color;
+  }
+}
+
 .main{
   padding: $spacing*2 $spacing;
   max-width: 1300px;
@@ -54,4 +63,10 @@ a{
 
 .modal-trigger{
   cursor: pointer;
+}
+
+.page-title{
+  padding-bottom: $spacing;
+  margin-bottom: $spacing;
+  border-bottom: 1px solid $light-grey;
 }

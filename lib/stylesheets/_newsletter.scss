@@ -1,11 +1,13 @@
 .newsletter{
-  background: $white;
+  background: $primary-color;
+  // background: $white;
+  // border: 6px solid $primary-color;
   position: relative;
+  // max-width: 800px;
   @include medium-large{
     @include flex-center;
     justify-content: center;
   }
-  background: $primary-color;
   margin: $spacing auto 0 auto;
   padding: $spacing*2;
   .newsletter-tagline{
