@@ -19,7 +19,11 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
 
   formatDuration(duration) {
     const mDuration = moment.duration(this.props.post.media.duration, 'seconds');
-    return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    if (this.props.post.media.duration > 3600) {
+      return `${mDuration.hours()}:${mDuration.minutes() < 10 ? '0' : ''}${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    } else {
+      return `${mDuration.minutes()}:${mDuration.seconds() < 10 ? '0' : ''}${mDuration.seconds()}`;
+    }
   }
 
   render() {
@@ -32,39 +36,40 @@ class FujiPostsItem extends getRawComponent('PostsItem') {
     return (
       <div className={postClass}>
 
-        <div className="posts-item-image">
+        {post.thumbnailUrl ?
+
+          <div className="posts-item-image">
+            
+            <Components.PostsThumbnail post={post}/>
+
+            {post.media && post.media.duration ? <span className="posts-item-duration">{this.formatDuration(post.media.duration)}</span> : null}
           
-          {post.thumbnailUrl ? <Components.PostsThumbnail post={post}/> : null}
+          </div>
 
-          {post.media && post.media.duration ? <span className="posts-item-duration">{this.formatDuration(post.media.duration)}</span> : null}
-
-          {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
-        
-        </div>
+        : null}
 
         <div className="posts-item-content">
 
-          <h3 className="posts-item-title">
-            <Link to={Posts.getPageUrl(post)} className="posts-item-title-link">
-              {post.title}
-            </Link>
-          </h3>
+          <div className="posts-item-body">
 
-          {this.renderCategories()}
-
-          <div className="posts-item-meta">
-            {/*
-            <div className="posts-item-comments">
-              <Link to={Posts.getPageUrl(post)}>
-                <FormattedMessage id="comments.count" values={{count: post.commentCount}}/>
+            <h3 className="posts-item-title">
+              <Link to={Posts.getPageUrl(post)} className="posts-item-title-link">
+                {post.title}
               </Link>
-            </div>
-            */}
+            </h3>
+
+            {this.renderCategories()}
+
+            {this.props.showExcerpt ? <div className="posts-item-excerpt">{post.excerpt}</div>: null}
+
           </div>
+
+          <Components.PostsItemFooter post={post} />
+
+          {Posts.options.mutations.edit.check(this.props.currentUser, post) ? this.renderActions() : null}
 
         </div>
 
-        {/* this.renderCommenters() */}
 
       </div>
     )

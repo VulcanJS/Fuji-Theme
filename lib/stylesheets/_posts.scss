@@ -97,7 +97,7 @@
   left: 0px;
   @include flex-center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
   transition: opacity ease-in 300ms;
   opacity: 0;
   color: $white;
@@ -112,7 +112,12 @@
 }
 
 .posts-item-content{
+  position: relative;
+}
+
+.posts-item-body{
   padding: $spacing/2;
+  flex: 1;
 }
 
 .posts-item-title{
@@ -120,13 +125,20 @@
   margin-bottom: $spacing/2;
 }
 
+.posts-item-title-link{
+  font-weight: normal;
+}
+
 .posts-actions{
   position: absolute;
-  left: 0px;
+  right: 0px;
   bottom: 0px;
   padding: $spacing/4;
-  background: rgba(0,0,0,0.6);
-  color: white;
+  height: 40px;
+  opacity: 0.25;
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .posts-item-duration{
@@ -137,6 +149,38 @@
   padding: 2px 5px;
   background: rgba(0,0,0,0.6);
   color: white;
+}
+
+//////////////////////////////////////////////////////
+// Posts Featured                                   //
+//////////////////////////////////////////////////////
+
+.posts-featured{
+  margin-bottom: $spacing*2;
+  @include medium-large{
+    .posts-item{
+      width: auto;
+      flex-direction: row;
+      margin: 0;
+    }
+    .posts-item-body{
+      padding: $spacing;
+    }
+    .posts-item-title{
+      font-size: $largest-font;
+    }
+    .posts-categories{
+    }
+    .posts-item-place{
+      padding: $spacing/2 $spacing;
+    }
+  }
+}
+
+.posts-item-excerpt{
+  @include small{
+    display: none;
+  }
 }
 
 //////////////////////////////////////////////////////
