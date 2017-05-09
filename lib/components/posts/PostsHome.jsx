@@ -12,7 +12,7 @@ const FujiPostsHome = props => {
 
   return containsFilteringOptions(terms) ?
 
-    <div className="posts-search">
+    <div className="posts-search-results">
       {terms.cat ? <Components.FujiCategoryHeading slug={terms.cat}/> : null}
       <Components.PostsList terms={terms} showHeader={false} />
     </div> : 

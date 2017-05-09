@@ -5,7 +5,9 @@ import { FormattedMessage } from 'react-intl';
 
 const FujiPostsFeatured = ({results, loading, currentUser}) => {
 
-  if (results.length === 0) {
+  if (loading) {
+    return <Components.Loading />
+  } else if (results.length === 0) {
     return null;
   } else {
     return (
