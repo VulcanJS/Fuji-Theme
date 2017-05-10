@@ -1,5 +1,5 @@
 # Fuji-Theme
-A Vulcan theme for showcasing videos and photos
+A [Vulcan](http://vulcanjs.org) theme for showcasing videos and photos
 
 ![https://d3vv6lp55qjaqc.cloudfront.net/items/231m2T1E0z3P1O270I2f/fuji-screenshot.jpg?X-CloudApp-Visitor-Id=d40749865873d7b5ab32c80852150f74&v=979cb39b](https://d3vv6lp55qjaqc.cloudfront.net/items/231m2T1E0z3P1O270I2f/fuji-screenshot.jpg?X-CloudApp-Visitor-Id=d40749865873d7b5ab32c80852150f74&v=979cb39b)
 
