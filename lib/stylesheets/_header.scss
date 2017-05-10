@@ -43,6 +43,7 @@
   }
   img{
     display: block;
+    width: 100%;
     max-width: 150px;
     max-height: 100px;
     @include small{
@@ -147,17 +148,17 @@
 }
 
 .sidebar-toggle{
-    flex: 1;
-    height: 100%;
-    width: $headerHeightMedium;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover{
-      background: $primary-color;
-      color: $white;
-    }
-    @include small{
-      width: $headerHeightSmall;
-    }
+  flex: 1;
+  height: 100%;
+  width: $headerHeightMedium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    background: $primary-color;
+    color: $white;
   }
+  @include small{
+    width: $headerHeightSmall;
+  }
+}

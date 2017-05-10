@@ -8,6 +8,8 @@ const FujiPostsMain = props =>
 
     <Components.PostsFeatured />
 
+    <Components.Newsletter />
+
     <div className="posts-list-block">
       <div className="posts-main-heading">
         <h3><FormattedMessage id="posts.top"/></h3>

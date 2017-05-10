@@ -8,7 +8,7 @@
     @include flex-center;
     justify-content: center;
   }
-  margin: $spacing auto 0 auto;
+  margin: 0 auto $spacing*2 auto;
   padding: $spacing*2;
   .newsletter-tagline{
     font-size: 1.35rem;
@@ -35,7 +35,7 @@
   }
 }
 
-.newsletter-button{
+button.newsletter-button{
   background: $dark-grey;
   color: white;
   &:hover{

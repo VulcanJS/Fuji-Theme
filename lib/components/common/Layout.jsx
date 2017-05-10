@@ -44,6 +44,7 @@ class FujiLayout extends Component {
         pullRight={true}
         docked={this.props.ui.showSidebar && this.props.ui.breakpoint === 'medium'}
         open={this.props.ui.showSidebar && this.props.ui.breakpoint === 'small'}
+        touch={false}
       >
 
         <div className={classNames('wrapper', `wrapper-${this.props.ui.breakpoint}`)} id="wrapper">
@@ -65,9 +66,7 @@ class FujiLayout extends Component {
                 {this.props.children}
 
               </div>
-              
-              <Components.Newsletter />
-              
+                            
             </div>
 
             {/*<Components.Newsletter />*/}
